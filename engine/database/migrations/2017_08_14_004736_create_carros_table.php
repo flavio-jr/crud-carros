@@ -19,6 +19,7 @@ class CreateCarrosTable extends Migration
             $table->integer('car_fab_id')->unsigned();
             $table->date('car_ano');
             $table->float('car_quilometragem', 4, 2);
+            $table->enum('car_tipo_motor', array_keys(config('api.tipos_motor')));
             $table->enum('car_tipo_direcao', array_keys(config('api.tipos_direcao')));
             $table->float('car_preco', 6, 2);
             $table->float('car_consumo', 3, 2);
